@@ -1,18 +1,18 @@
 {
-  "name": "template",
+  "name": "compress-js",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon src/app.ts",
-    "start": "node dist/app.js",
-    "build": "tsc -p ."
+    "start": "node --experimental-wasm-threads --experimental-wasm-bulk-memory dist/app.js",
+    "prestart": "tsc -p ."
   },
   "license": "MIT",
-  "author": { 
+  "author": {
     "name": "Richard Seberino Marques Filho",
     "email": "richard.filho@seberino.com.br",
     "url": "https://github.com/caciqu3s"
   },
   "devDependencies": {
+    "@types/amqplib": "^0.5.17",
     "@types/express": "^4.17.8",
     "@types/node": "^14.6.4",
     "nodemon": "^2.0.4",
@@ -21,6 +21,12 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "@ffmpeg/core": "^0.8.5",
+    "@ffmpeg/ffmpeg": "^0.9.7",
+    "amqplib": "^0.6.0",
+    "aws-sdk": "^2.831.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "util": "^0.12.3"
   }
 }
